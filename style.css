@@ -32,3 +32,8 @@ li {
 li:hover {
   transform: scale(1.02);
 }
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}

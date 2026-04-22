@@ -5,37 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chuck Norris Facts</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <div id="app">
-    <h1>Chuck Norris Facts</h1>
+  <div id="app" class="container py-4">
+    <h1 class="text-center mb-4">Chuck Norris Facts</h1>
 
-    <!-- Feature 2: v-for -->
-    <ul>
-      <li v-for="(fact, index) in chuck" :key="index">
-        {{ fact.value }}
-      </li>
-    </ul>
+    <div class="row">
+      <div
+        class="col-12 col-md-6 col-lg-4 mb-4"
+        v-for="(fact, index) in chuck"
+        :key="index">
+        <chuck-card
+          :icon_url="fact.icon_url"
+          :value="fact.value">
+        </chuck-card>
+      </div>
+    </div>
   </div>
 
-  <script>
-    const { createApp } = Vue;
 
-    createApp({
-      data() {
-        return {
-          chuck: [
-            { value: "Chuck Norris can skydive into outer space." },
-            { value: "The chief export of Chuck Norris is pain." },
-            { value: "Chuck Norris doesn't read books. He stares them down until he gets the information he wants." },
-            { value: "Time waits for no man. Unless that man is Chuck Norris." },
-            { value: "If you spell Chuck Norris in Scrabble, you win. Forever." }
-          ]
-        };
-      }
-    }).mount("#app");
-  </script>
+
+
+  <script src="javascript.js"></script>
 </body>
 </html>
